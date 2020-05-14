@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.done-todo{
+  text-decoration: line-through;
+  color: #18db94b0;
+  font-style: italic;
+  font-size: medium;
+}
+@media only screen and (max-width: 600px) {
+  .show-on-small{
+    display:none 
+  }
+  .my-side-meu{
+    display:none 
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .my-sidebar{
+    width: 10%;
+  }
+  .show-on-small{
+    display:none
+  }
+  .my-side-meu{
+    display:none 
+  }
+  
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .my-sidebar{
+    width: 20%;
+    
+  }
+  .my-list{
+    width:50%;
+  }
+  .my-side-meu{
+    display:none 
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .my-sidebar{
+    width: 20%;
+  }
+  .my-list{
+    width:50%;
+  }
+  .my-side-meu{
+    display:none 
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .my-sidebar{
+    width: 20%;
+  }
+  .my-list{
+    width:70%;
+  }
+  .my-side-meu{
+    display:none 
+  }
+}
+
+my-sidebar
+.show-on-small{
+  display:none !important
+}
+
+i.icon-white {
+  color: white;
+}
+.undone-todo{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
