@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
 /**
- *  u can use this middleware whenever a secure trasaction or some senstivie data show check whether the user is login or not
+ *check whether the user has enough valid token to access 
+ * Todo add update delete
  */
     // fetch token from the header
     const token = req.header('x-auth-token');
