@@ -10,7 +10,7 @@ export const fetchUser = () => async (dispatch, getState) => {
  
 
     try{
-        const res = await axios.get('https://project-nyx-todo.herokuapp.com/api/user', tokenConfig(getState));
+        const res = await axios.get('/api/user', tokenConfig(getState));
         if(res)
             dispatch({
                 type: USER_LOADED,
@@ -30,7 +30,7 @@ export const fetchUser = () => async (dispatch, getState) => {
 export const deleteTodo = (request) => async(dispatch, getState) => {
     console.log(request)
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/delete_todo', request, tokenConfig(getState));
+        const res = await axios.post('/api/delete_todo', request, tokenConfig(getState));
         if(res)
         dispatch(returnErrors('Successful', '200', 'DELETE_TODO'));
     } catch(e){
@@ -63,7 +63,7 @@ export const clearErrors = () => {
     export const login = (request) => async (dispatch) => {
         console.log(request)
         try{
-            const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/login', request);
+            const res = await axios.post('/api/login', request);
             console.log(res)
             if(res){
                 dispatch(returnErrors('Login Successful', '200', LOGIN_SUCCESS));
@@ -92,7 +92,7 @@ export const clearErrors = () => {
     }
 
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/new_user', request, config);
+        const res = await axios.post('/api/new_user', request, config);
         if(res){
             dispatch(returnErrors('Registration Successful', '200', REGISTER_SUCCESS));
             dispatch({
@@ -120,7 +120,7 @@ export const logout = ()=>{
 export const updateTodo = (request) => async(dispatch, getState) => {
   console.log(request)
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/update_todo', request, tokenConfig(getState));
+        const res = await axios.post('/api/update_todo', request, tokenConfig(getState));
         if(res)
             dispatch(returnErrors('Successful', '200', 'UPDATE_TODO'));
     } catch(e){
@@ -131,7 +131,7 @@ export const updateTodo = (request) => async(dispatch, getState) => {
 export const addTodo = (request) => async(dispatch, getState) => {
     console.log(request)
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/new_todo', request, tokenConfig(getState));
+        const res = await axios.post('/api/new_todo', request, tokenConfig(getState));
         if(res)
             dispatch(returnErrors('Successful', '200', ADD_TODO));
     } catch(e){
@@ -143,7 +143,7 @@ export const addTodo = (request) => async(dispatch, getState) => {
 export const addCat  = (request) => async (dispatch, getState) => {
     console.log(request);
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/new_cat', request, tokenConfig(getState));
+        const res = await axios.post('/api/new_cat', request, tokenConfig(getState));
         if(res)
             dispatch(returnErrors('Successful', '200', ADD_CATEGORY));
     } catch(e){
@@ -156,7 +156,7 @@ export const addCat  = (request) => async (dispatch, getState) => {
 export const getCat  = (id) => async (dispatch) => {
     console.log(id)
     try{
-        const res = await axios.get(`https://project-nyx-todo.herokuapp.com/api/get_cat/${id}`);
+        const res = await axios.get(`/api/get_cat/${id}`);
         if(res)
             dispatch({type: GET_CATEGORY, payload: res.data})
     } catch(e){
@@ -168,7 +168,7 @@ export const getCat  = (id) => async (dispatch) => {
 export const getTodo  = (id) => async (dispatch) => {
     console.log(id)
     try{
-        const res = await axios.get(`https://project-nyx-todo.herokuapp.com/api/get_todo/${id}`);
+        const res = await axios.get(`/api/get_todo/${id}`);
         if(res)
             dispatch({type: GET_TODO, payload: res.data})
     } catch(e){
@@ -180,7 +180,7 @@ export const getTodo  = (id) => async (dispatch) => {
 // delete cat
 export const deleteCat  = (request) => async (dispatch, getState) => {
     try{
-        const res = await axios.post('https://project-nyx-todo.herokuapp.com/api/new_cat', request, tokenConfig(getState));
+        const res = await axios.post('/api/new_cat', request, tokenConfig(getState));
         if(res)
             dispatch({type: ADD_CATEGORY, payload: res.data})
     } catch(e){
